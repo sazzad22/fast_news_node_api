@@ -1,4 +1,7 @@
-const { getNewsArticleService } = require('../services/newsArticle.service');
+const {
+  getNewsArticleService,
+  addOneNewsService,
+} = require('../services/newsArticle.service');
 
 const getNewsArticle = async (req, res, next) => {
     try {
@@ -16,7 +19,27 @@ const getNewsArticle = async (req, res, next) => {
       });
     }
 };
+
+//adds a user to the userdatabase
+const addOneNews = async (req, res) => {
+  try {
+    const result = await addOneNewsService(req.body);
+
+    res.status(200).json({
+      success: true,
+      data: result
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Failed to add data",
+      error: error.message,
+    });
+  }
+};
+
   
 module.exports = {
-    getNewsArticle
+  getNewsArticle,
+  addOneNews
 } 

@@ -5,6 +5,7 @@ const router = express.Router();
 router
     .route('/')
     .get(newsArticleController.getNewsArticle)
+    .post(newsArticleController.addOneNews)
 
 
 module.exports = router;

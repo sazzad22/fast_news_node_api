@@ -17,7 +17,7 @@ const NewsArticleSchema = mongoose.Schema(
     },
 
     writer: {
-      type: Number,
+      type: String,
       required: [true, "provide writer name for this article."],
     },
     editor: {
