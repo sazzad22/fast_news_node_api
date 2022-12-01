@@ -6,6 +6,7 @@ router
     .route('/')
     .get(editorController.getAllEditor)
     .post(editorController.addOneEditor)
+    
 
 
 module.exports = router;

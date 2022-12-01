@@ -4,7 +4,7 @@ const Editor = require('../models/Editor');
 // Query service to get all editors
 exports.getEditorService = async () => {
   //collection - users(newly create if not exits)
-  const editors = await Editor.find({});
+  const editors = await Editor.find({}).populate("newsArticle");
   return editors;
 };
 
