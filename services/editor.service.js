@@ -21,4 +21,15 @@ exports.getOneEditorService = async (email) => {
   
   return editor;
 };
+
+//update user field
+exports.updateOneEditorService = async (email, currentState) => {
+  /* const updatedData = {
+    status: currentState
+  } */
+  const result = await Editor.updateOne({ email: email }, { $set: currentState });
+  
+ 
+  return result;
+};
   
