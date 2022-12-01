@@ -4,6 +4,7 @@ const router = express.Router();
 
 router
     .route('/')
+    .get(editorController.getAllEditor)
     .post(editorController.addOneEditor)
 
 
