@@ -21,8 +21,11 @@ const NewsArticleSchema = mongoose.Schema(
       required: [true, "provide writer name for this article."],
     },
     editor: {
-      type: String,
-      required: [true, "provide writer name for this article."],
+      name: String,
+      id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Editor",
+      },
     },
   },
   {
