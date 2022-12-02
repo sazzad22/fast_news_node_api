@@ -11,10 +11,10 @@ const UserSchema = mongoose.Schema(
       type: String,
       required: [true, "provide a email for this user."],
     },
-    password: [{
+    password: {
       type: String,
       required:[true,"provide a password for this user"]
-    }],
+    },
 
     role: {
       type: String,

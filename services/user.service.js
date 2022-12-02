@@ -25,4 +25,12 @@ exports.updateOneUserService = async (email, link) => {
     
    
     return result;
+};
+  
+//query one user that matches the id
+exports.getOneUserService = async (email) => {
+    const query = { email:email };
+    const user = await User.findOne(query);
+    console.log(query,user);
+    return user;
   };

@@ -3,7 +3,7 @@ const {
     addOneUserService,
     updateOneUserService,
     getOneUserService
-} = require('packageName');
+} = require('../services/user.service');
 
 const getAllUsers = async (req, res, next) => {
     try {

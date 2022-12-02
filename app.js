@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const routerNewsArticle = require('./route/newsArticle.route');
 const routerEditor = require('./route/editor.route');
+const routerUser = require('./route/user.route');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 //api route middleware
 app.use('/api/v1/news-article', routerNewsArticle);
 app.use('/api/v1/editor', routerEditor);
+app.use('/api/v1/user', routerUser);
 
 //home response
 app.get('/',async (req, res) => {

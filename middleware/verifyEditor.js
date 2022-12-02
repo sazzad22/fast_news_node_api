@@ -1,6 +1,8 @@
+const { getOneEditorService } = require("../services/editor.service");
+
 exports.verifyEditor = async (req, res, next) => {
-    const requester = req.email;
-    const requesterAccount = await userCollection.findOne({ email: requester });
+    const email = req.params.email;
+    const requesterAccount = await getOneEditorService
     if (requesterAccount.role === 'admin') {
       next();
     }
