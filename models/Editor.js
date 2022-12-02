@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const status = ['active', 'inactive'];
+
 // Schema design //
 const EditorSchema = mongoose.Schema(
   {
@@ -18,8 +20,13 @@ const EditorSchema = mongoose.Schema(
 
     status: {
       type: String,
-      enum: ["active", "inactive"],
-      default: "active",
+      validate: {
+        validator: function(value) {
+          return status.includes(value);
+        },
+        message: props => `${props.value} is not a valid status!`
+      },
+      
     },
   },
   {

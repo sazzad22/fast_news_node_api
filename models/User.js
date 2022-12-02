@@ -9,17 +9,17 @@ const UserSchema = mongoose.Schema(
     },
     email: {
       type: String,
-      required: [true, "provide a email for this article."],
+      required: [true, "provide a email for this user."],
     },
-    newsArticle: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'NewsArticle'
+    password: [{
+      type: String,
+      required:[true,"provide a password for this user"]
     }],
 
-    status: {
+    role: {
       type: String,
-      enum: ["active", "inactive"],
-      default: "active",
+      enum: ["user", "admin"],
+      default: "admin",
     },
   },
   {
